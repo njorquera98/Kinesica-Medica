@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kinesica</title>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <% if (!user) { %>
+  <a href="/signin">Ingesa a tu Cuenta</a>
+  <a href="/signup">Crea tu cuenta</a>
+  <% } else { %>
+  <a href="/logout">Cerrar Sesion</a>
+  <a href="/patient_list">Lista de Pacientes</a>
+  <% } %>
+
+  <%if (signinMessage) {%>
+    <p><%= signinMessage %></p>
+  <% } %>
+  <%if (signupMessage) {%>
+    <p><%= signupMessage %></p>
+  <% } %>
+
+  <%- body %>
+</body>
+</html>
